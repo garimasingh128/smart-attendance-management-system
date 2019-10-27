@@ -1,0 +1,536 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.17134}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9  AIM: TO MAKE A SMART ATTENDANCE SYSTEM USING DATA STRUCTURES IN C OR C++\par
+INTRODUCTION:\par
+The current attendance system in most of the educational institutions is paper based, wherein the students are expected to sign an attendance sheet. This system has several disadvantages like:\par
+(a) The students can mark attendance of their fellow classmates without being caught.\par
+(b) Punctuality of individuals cannot be recorded\par
+(c) Time consuming\par
+(d) It can be lost easily\par
+There are following features of attendance management software\'85\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Ease to Access\par
+{\pntext\f1\'B7\tab}Bio-metric Integration (Figure Print)\par
+{\pntext\f1\'B7\tab}Absence/Leave management\par
+{\pntext\f1\'B7\tab}Mobile Application\par
+{\pntext\f1\'B7\tab}Class & Section wise attendance\par
+{\pntext\f1\'B7\tab}Day wise attendance\par
+{\pntext\f1\'B7\tab}Subject Wise Attendance\par
+{\pntext\f1\'B7\tab}Morning, Afternoon Absent and Early Leave tracking\par
+{\pntext\f1\'B7\tab}Analytics with graphs and reports\par
+{\pntext\f1\'B7\tab}Send update via e-mail, SMS, and notification\par
+{\pntext\f1\'B7\tab}Better accuracy\par
+{\pntext\f1\'B7\tab}Increase the efficiency of HR staff\par
+{\pntext\f1\'B7\tab}Increase employee productivity\par
+{\pntext\f1\'B7\tab}Reduce admin costs\par
+{\pntext\f1\'B7\tab}Data integrity\par
+{\pntext\f1\'B7\tab}Reduce administrative work\par
+
+\pard\sa200\sl276\slmult1 SMART ATTENDANCE SYSTEM USES:\par
+Improves employee management: As attendance software reduces errors in attendance management it leads to accurate payroll processing and reduces payroll redundancies.\par
+Automates Generation of timesheet: Generating timesheets of employees becomes easier with automated time and attendance tracking software.\par
+Reduces payroll inaccuracies: As attendance software records attendance accurately it paves way for accurate and error-free payroll processing.\par
+Timesheet rectification made easy: Making rectification in timesheet is most tedious task for HR\rquote s. Manually time tracking make it more difficult but with cloud based attendance software timesheet rectification becomes much easier.\par
+We have tried to implement some of these features in our project.\par
+
+\pard\sa200\sl276\slmult1 This is a C++ project that is based on the important concept of data structure known as linked list, while the name of the project is "smart attendance system" .This project is basically full animated project. This project usually holds the important functions that are really needed for a Smart Attendance System.\par
+What is Linked list? \par
+Usually Linked list can be define as it  is the most important and  basic form of a data structure. According to the  rules of data structure a linked list is more or less similar to an array . For explanation the major difference between a linked list and array is that an array (1D and 2D )can hold values belonging to the same data type only whereas there is no such restriction on a linked list.                                  \par
+Functions of the Project:\par
+1. PRESENT : Add Attendance Record\par
+2. ABSENT : Delete Specify Record\par
+3. ALL ABSENT : Delete All Records\par
+4. Find A Record\par
+5. Display All Atendance Records\par
+6. About Developers \par
+Application:\par
+It is used for marking attendance in educational institutions where attendance management is itself a time consuming and cumbersome process. It will make the attendance system smooth and reliable.\par
+Source Code:\par
+#include<iostream>\par
+#include<conio.h>\par
+ #include<windows.h>\par
+ #include<string.h>\par
+   \par
+using namespace std;\par
+\par
+class link\par
+\{\par
+      private:\par
+            \par
+\par
+int b,x,i,choice,n,a;\par
+char cont;\par
+\par
+struct node\par
+\{\par
+     int data;\par
+      string name;\par
+   string email;\par
+    string home;\par
+    string off;\par
+    string tell;\par
+    string cell;\par
+\tab string sec;\par
+\tab string gender;\par
+      struct node *link;  \par
+     \par
+\}*head,*temp,*temp1,*temp2;\par
+\par
+public:\par
+link()\par
+\{\par
+      \par
+head=NULL;      \par
+\}\par
+\par
+   void start()\par
+   \{ \par
+\tab    Sleep(800);\par
+gotoxy(52,10);\par
+  cout<<"STUDENT INFORMATION SYSTEM\\n";\par
+\tab  Sleep(600);\par
+\tab  system("color 0b");\par
+\tab  gotoxy(52,12);\par
+    Sleep( 1000 );\par
+\tab  cout<<"\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB";\par
+\tab  Sleep(2000);\par
+\tab   cout<<"\\xDB\\xDB\\xDB\\xDB";\par
+\tab   Sleep(1000);\par
+\tab   cout<<"\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB";\par
+\tab  Sleep(1000);\par
+\tab cout<<"\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB";\par
+\tab  Sleep(500);\par
+    system("color 1f");\par
+     effect();\par
+\tab  main_menu();\par
+        \}\par
+\par
+void main_menu()\par
+      \{\par
+\tab\tab     \par
+      do\par
+      \{\par
+          system("cls");\par
+          \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t  SMART ATTENDANCE MANAGEMENT SYSTEM:: \\n"; \par
+\par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t  MAIN MENU \\n"; \par
+\tab\tab cout<<"\\t\\t\\t\\t\\t__________________________________\\n\\n";\par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t1. PRESENT : Add Attendance Record \\n";  \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t2. ABSENT : Delete Specify Record\\n";  \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t3. ALL ABSENT : Delete All Records\\n"; \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t4. Find A Record\\n";\par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t5. Display All Atendance Records\\n"; \par
+\tab\tab  \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t6. About Developers\\n";  \par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t7. Exit\\n";\par
+\tab\tab cout<<"\\n\\t\\t\\t\\t\\t\\t||Choose your option : ";\par
+       choice=getche();\par
+\tab    switch(choice)\par
+        \{\par
+         case '1':\par
+         system("cls");  \par
+         insert();\par
+         break; \par
+         case '2':\par
+         system("cls");   \par
+        del_specify();\par
+         break; \par
+         case '3':\par
+         system("cls");   \par
+         del();\par
+         break; \par
+         case '4':\par
+         system("cls");\par
+         search();\par
+         break; \par
+         case '5':\par
+         system("cls");              \par
+         print();\par
+         break; \par
+\tab\tab  case '6':\par
+\tab\tab About_Dev();\par
+\tab\tab break;\par
+         case '7':\par
+         exit(0);\par
+         break; \par
+         default:                 \par
+        cout<<"\\nInvalid Key Pressed................."; \par
+          \}       \par
+ \par
+        cout<<"\\n\\n*Press ENTER KEY To <continue>";\par
+       cout<<"\\n\\n*Press ESC KEY To <exit>";\par
+          \par
+        x=getche();   \par
+        system("cls");  \par
+        if(x==27)\par
+        \{\par
+        exit(0);\par
+        \}\par
+\tab\tab\par
+        else \par
+        \{\par
+\tab\tab\tab main_menu();\par
+        \}\par
+        \}while(x==13);  \par
+      \par
+        \}\par
+\par
+void About_Dev()\par
+\{\par
+effect();\par
+\tab system("cls");\par
+cout<<"\\n";\par
+gotoxy(45,1);\par
+cout<<"\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB About Developer \\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\n\\n";\par
+gotoxy(45,3);cout<<"\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB \\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\xDB\\n";\par
+Sleep(1000);cout<<"\\nName: Garima Singh 1806143";Sleep(1000);;\par
+Sleep(1000);  \par
+cout<<"\\nPlatform :Visual Studio OR DEV-C++ \\n";\par
+cout<<"\\nLanguage :C++\\n";\par
+\par
+\}\par
+\par
+void insert(void)\par
+\{\par
+\tab effect();\par
+\par
+         char get1[100],get2[100],get3[100],get4[100],get5[100],get6[100],get7[100],get8[100];\par
+     gotoxy(45,1);cout<<" Add your Record \\n";\par
+      gotoxy(45,2);cout<<" ___________\\n";\par
+      cout<<"\\n"; \par
+ \par
+ if(head==NULL)\par
+ \{\par
+          \par
+ head =new struct node;\par
+ i=1;\par
+cout<<"\\n# Student Id:"<<i<<endl;\par
+ head->data=i;\par
+ fflush(stdin);\par
+cout<<"\\n# Name :" ;\par
+       gets(get1);\par
+       head->name=get1;\par
+      cout<<"\\n# Class : "; \par
+  gets(get6);\par
+  head->off=get6;\par
+  cout<<"\\n# Section : ";\par
+  gets(get7);\par
+  head->sec=get7;\par
+  cout<<"\\n# Gender : ";\par
+  gets(get8);\par
+  head->gender=get8;\par
+      cout<<"\\n# Enter Telephone Number : ";\par
+       gets(get2);\par
+       head->tell=get2;\par
+        cout<<"\\n# Enter Cell-Phone Number : ";\par
+       gets(get3);\par
+head->cell=get3;\par
+      cout<<"\\n# Enter Email Address : "; \par
+      gets(get4);\par
+head->email=get4;\par
+      cout<<"\\n# Enter Home  Address : "; \par
+ gets(get5);\par
+  head->home=get5;\par
+ head->link=NULL;  \par
+ cout<<"\\nYour Record Has been Success Fully inserted\\n";\par
+ \}    \par
+     else\par
+     \{\par
+     temp=head;\par
+     head=new struct node;    \par
+ i++;\par
+cout<<"\\n# Student Id:"<<i<<endl;\par
+head->data=i;\par
+ fflush(stdin);\par
+  cout<<"\\n# Name :" ;\par
+       gets(get1);\par
+       head->name=get1;\par
+       cout<<"\\n# Class : "; \par
+  gets(get6);\par
+  head->off=get6;\par
+ cout<<"\\n# Section : ";\par
+  gets(get7);\par
+  head->sec=get7;\par
+  cout<<"\\n# Gender : ";\par
+  gets(get8);\par
+  head->gender=get8;\par
+cout<<"\\n# Enter Telephone Number : ";\par
+       gets(get2);\par
+       head->tell=get2;\par
+  cout<<"\\n# Enter Cell-Phone Number : ";\par
+       gets(get3);\par
+head->cell=get3;\par
+   cout<<"\\n# Enter Email Address : "; \par
+      gets(get4);\par
+head->email=get4;\par
+  cout<<"\\n# Enter Home  Address : "; \par
+ gets(get5);\par
+  head->home=get5;\par
+  head->link=temp;\par
+cout<<"\\nYour Record Has been  SuccessFully  inserted\\n";   \par
+     \}\par
+      cout<<"\\nDo You Want To Add Another Record ? y / n  \\a";\par
+     cont=getche();\par
+\tab  if(cont=='y')\par
+      \{\par
+      cout<<"\\n";\par
+      system("cls");\par
+      insert();\par
+      \}\par
+ \par
+      Sleep(1000);\par
+      main_menu();\par
+      \par
+     \par
+  \}\par
+  \par
+  void search(void)\par
+  \{\par
+  effect();\par
+  system("cls");\par
+      temp=head;\par
+      \par
+      cout<<"\\n\\n\\t\\t\\t\\t\\t\\t\\aRestriction!\\n\\n\\n\\n\\t\\t\\t\\t   Student ID should be in integer not in char ";\par
+\tab   Sleep(3000);\par
+\tab   system("cls");\par
+       cout<<"\\nEnter Id Which do you want to search:";\par
+\tab    \par
+       cin>>a;\par
+        fflush(stdin);\par
+    while(head!=NULL)\par
+    \{\par
+                  \par
+       if(head->data==a)         \par
+       \{\par
+       cout<<"\\n";\par
+     gotoxy(45,1); cout<<"Entry Found\\n";\par
+      gotoxy(45,2); cout<<" ____________\\n"; \par
+    cout<<"==========================================================================================================================";\par
+      cout<<"\\n";\par
+      cout<<"\\n# ID: "<<head-> data;\par
+      cout<<"\\n# Name: "<<head-> name;\par
+    cout<<"\\n# Class : "<<head -> off;\par
+\tab   cout<<"\\n# Section : "<<head ->sec;\par
+\tab   cout<<"\\n# Gender : "<<head ->gender;\par
+  cout<<"\\n# Telephone Number : "<<head-> tell;\par
+  \par
+      cout<<"\\n# Cell-Phone Number : "<<head -> cell;\par
+      cout<<"\\n# Email Address : "<<head -> email; \par
+\par
+      cout<<"\\n# Home  Address : "<<head-> home; \par
+      \par
+   \par
+      cout<<"\\n";\par
+    cout<<"===========================================================================================================================";\par
+\par
+                  return;      \par
+     \par
+     \}  \par
+     else     \par
+        \par
+      \{\par
+     head=head->link;\par
+     \} \par
+\}\par
+cout<<"Not found";\par
+\par
+\par
+\}\par
+    \par
+  void del(void)\par
+  \{\par
+       while(head!=NULL)\par
+       \{\par
+           delete(head);\par
+           head=head->link;           \par
+                        \par
+       \}\par
+       cout<<"\\nYour all record has been deleted....";\par
+       \par
+    \}\par
+  \par
+   void print(void)\par
+  \{\par
+\tab   effect();\par
+       \par
+             temp1=head;\par
+      if(temp1==NULL)\par
+      \{\par
+      \par
+     cout<<"No Entries Found.....";\par
+     Sleep(1000);\par
+      main_menu();\par
+      \par
+      \}     \par
+     \par
+           \par
+      x:\par
+      system("cls");\par
+      gotoxy(45,1);cout<<"Display Record \\n";\par
+     cout<<"=====================================================================================================================";\par
+      cout<<"\\n";\par
+\tab   cout<<"\\n# ID: "<<temp1-> data<<endl;\par
+      cout<<"\\n# Name: "<<temp1-> name<<endl;\par
+\tab   cout<<"\\n# Class : "<<temp1 -> off<<endl;\par
+\tab   cout<<"\\n# Section : "<<temp1 ->sec<<endl;\par
+\tab   cout<<"\\n# Gender : "<<temp1->gender<<endl;\par
+\tab   cout<<"\\n# Telephone Number : "<<temp1-> tell<<endl;\par
+\tab\tab cout<<"\\n# Cell-Phone Number : "<<temp1 -> cell<<endl;\par
+\tab cout<<"\\n# Email Address : "<<temp1 -> email<<endl; \par
+   cout<<"\\n# Home  Address : "<<temp1-> home<<endl; \par
+     cout<<"\\n";\par
+    cout<<"=======================================================================================================================";\par
+       cout<<"\\n";\par
+      cout<<"\\nDo You Want To View Another Record ? y / n  \\a";\par
+      cont=getche();\par
+      \par
+       if(cont=='y')\par
+      \{\par
+               \par
+      cout<<"\\n";\par
+      \par
+       if(temp1->link==NULL)\par
+      \{\par
+      cout<<"\\nNo More Entries ........";\par
+      Sleep(1000);\par
+     main_menu();\par
+\tab    \}\par
+      temp1=temp1->link;\par
+       \par
+      goto x;\par
+      \par
+      \}\par
+ \par
+      \par
+      else if(temp1->link==NULL)\par
+      \{\par
+      cout<<"\\nNo More Entries ........";\par
+      Sleep(1000);\par
+      \par
+      main_menu();\par
+ \par
+      \}\par
+     \par
+      else \par
+      \{\par
+           main_menu();\par
+      exit(0);\par
+      \}\par
+       \par
+\par
+  \}\par
+\par
+  void del_specify(void)\par
+  \par
+  \{\par
+       effect();\par
+    system ("cls");\par
+\tab cout<<"\\n\\t\\t\\t Delete A Record \\n";\par
+         cout<<"\\n\\t\\t\\t ________________\\n"; \par
+  cout<<"Enter Id which you want to del:";\par
+ cin>>n;\par
+\par
+ if(head->data==n)\par
+                  \{\par
+                                   \par
+                  free(head);\par
+                  \par
+              \par
+                  head=head->link;\par
+                       cout<<"\\n";\par
+       cout<<n<<" is successfully deleted in node";   \par
+                                 \}\par
+            else\par
+\tab\tab\tab\{\par
+          delete_node(n);\par
+            \}\par
+       \par
+\par
+\}\par
+  \par
+ \par
+  void delete_node(int n)\par
+\{\par
+      effect();\par
+\par
+temp1 = head;\par
+temp2 = head;\par
+ \par
+while (temp1 != NULL)\par
+\{\par
+if (temp1->data == n)\par
+\{\par
+                        \par
+break;\par
+\}\par
+\par
+if (temp1 == temp2)\par
+\{\par
+temp1 = temp1->link;\par
+\}\par
+else\par
+\{\par
+    \par
+temp2 = temp2->link;\par
+temp1= temp2->link; \par
+\}\}\par
+\par
+if (temp1 == NULL)\{\par
+cout << "ID not found" << endl;\par
+\par
+\}\par
+else\par
+\{\par
+   \par
+temp2 -> link = temp2 ->link->link;\par
+delete temp1;\par
+        cout<<"\\n";\par
+       cout<<n<<" is successfully deleted in node"; \par
+\par
+\}\par
+\par
+\}\par
+\par
+  void gotoxy(int x, int y)\par
+\{\par
+   COORD ord;\par
+   ord.X = x;\par
+   ord.Y = y;\par
+   SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), ord);\par
+\}\par
+\par
+void effect()\par
+\{   int i,j;\par
+char ch;\par
+ch=220;\par
+    gotoxy(0,0);\par
+    for (i=0;i<25;i++)\par
+    \{   \par
+\tab\tab for(j=0;j<125;j++)\par
+\tab\tab\{\par
+\tab\tab cout<<ch;\par
+        \par
+\tab\tab\}\par
+\tab\tab Sleep(12);\par
+\tab\tab\par
+\tab\tab cout<<"\\n";\par
+        \}\par
+    gotoxy(0,0);\par
+    for (i=0;i<27;i++)\par
+    \{ \par
+\tab\tab cout<<"\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t            \\n";\par
+\tab\tab Sleep(20);\par
+    \}\par
+    \}\par
+\};\par
+      \par
+int main()\par
+\{\par
+    link obj;\par
+   obj.start();\par
+    getch();            \par
+\}\par
+    \par
+}
+ 
