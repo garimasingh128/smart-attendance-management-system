@@ -39,7 +39,7 @@ head=NULL;
    { 
 	   Sleep(800);
 gotoxy(52,10);
-  cout<<"SMART ATTENDANCE MANAGEMENT SYSTEM:: \n";
+  cout<<"SMART ATTENDANCE MANAGEMENT SYSTEM:\n";
 	 Sleep(600);
 	 system("color 0b");
 	 gotoxy(52,12);
